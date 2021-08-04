@@ -9,12 +9,22 @@ import java.util.function.Consumer;
 public class ArrayTool {
 
     public static void swap(int[] arr, int i, int j) {
+        if(i == j) {
+            return;
+        }
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
     public static void execute(int[] arr, Consumer<int[]> consumer) {
+        print(arr);
+        consumer.accept(arr);
+        print(arr);
+    }
+
+    public static void execute(Consumer<int[]> consumer) {
+        int[] arr = {3, 1, 5, 6, 7, 0, 9, 4, 2, 8};
         print(arr);
         consumer.accept(arr);
         print(arr);
