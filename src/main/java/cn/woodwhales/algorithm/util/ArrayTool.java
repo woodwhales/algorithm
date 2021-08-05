@@ -17,17 +17,21 @@ public class ArrayTool {
         arr[j] = temp;
     }
 
-    public static void execute(int[] arr, Consumer<int[]> consumer) {
+    public static int[] execute(int[] arr, Consumer<int[]> consumer) {
         print(arr);
         consumer.accept(arr);
         print(arr);
+        return arr;
     }
 
-    public static void execute(Consumer<int[]> consumer) {
+    public static int[] execute(Consumer<int[]> consumer) {
         int[] arr = {3, 1, 5, 6, 7, 0, 9, 4, 2, 8};
+        System.out.print("原始数组 -> ");
         print(arr);
         consumer.accept(arr);
+        System.out.print("排序数组 -> ");
         print(arr);
+        return arr;
     }
 
     public static void print(int[] arr) {
@@ -37,4 +41,20 @@ public class ArrayTool {
         System.out.println();
     }
 
+    public static boolean isSorted(int[] arr) {
+        if(arr.length < 2) {
+            return true;
+        }
+
+        int [] temp = new int[arr.length];
+        System.arraycopy(arr, 0, temp, 0, arr.length);
+        for (int i = 1; i < temp.length; i++) {
+            if(arr[i] < arr[i-1]) {
+                System.out.print("排序失败，原始数组 -> ");
+                print(arr);
+                return false;
+            }
+        }
+        return true;
+    }
 }

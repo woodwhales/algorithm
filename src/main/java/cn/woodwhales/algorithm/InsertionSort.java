@@ -34,7 +34,8 @@ public class InsertionSort {
     }
 
     public static void main(String[] args) {
-        ArrayTool.execute(InsertionSort::sort);
+        int[] arr = ArrayTool.execute(InsertionSort::sort);
+        ArrayTool.isSorted(arr);
     }
 
 }
