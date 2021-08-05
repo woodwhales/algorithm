@@ -2,6 +2,7 @@ package cn.woodwhales.algorithm;
 
 import cn.woodwhales.algorithm.util.ArrayTool;
 
+import static cn.woodwhales.algorithm.util.ArrayTool.executeAndCheckSorted;
 import static cn.woodwhales.algorithm.util.ArrayTool.swap;
 
 /**
@@ -35,7 +36,7 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        ArrayTool.execute(SelectionSort::sort);
+        executeAndCheckSorted(100, 100, 1000, SelectionSort::sort);
     }
 
 }

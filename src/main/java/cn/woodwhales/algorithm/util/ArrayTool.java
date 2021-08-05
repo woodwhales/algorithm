@@ -41,6 +41,11 @@ public class ArrayTool {
         System.out.println();
     }
 
+    /**
+     * 校验 arr 是否为从小到大排序的数组
+     * @param arr 已排序的数组
+     * @return
+     */
     public static boolean isSorted(int[] arr) {
         if(arr.length < 2) {
             return true;
@@ -57,4 +62,24 @@ public class ArrayTool {
         }
         return true;
     }
+
+    /**
+     * 执行排序并校验排序函数是否正确
+     * @param maxLength 随机数组最大长度
+     * @param maxValue 随机数组元素最大值
+     * @param times 生成随机函数次数
+     * @param consumer 排序函数
+     */
+    public static void executeAndCheckSorted(int maxLength, int maxValue, int times,
+                                             Consumer<int[]> consumer) {
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < times; i++) {
+            int[] arr = RandomTool.randomArray(maxLength, maxValue);
+            consumer.accept(arr);
+            isSorted(arr);
+        }
+
+        System.out.println("执行并校验数组完成, 耗时：" + (System.currentTimeMillis() - start) + " ms");
+    }
+
 }
