@@ -4,7 +4,7 @@ import java.util.function.Consumer;
 
 /**
  * @author woodwhales on 2021-08-03 22:00
- * @Description
+ * @Description 数组工具
  */
 public class ArrayTool {
 
