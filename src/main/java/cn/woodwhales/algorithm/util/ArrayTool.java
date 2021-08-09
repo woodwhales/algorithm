@@ -41,6 +41,13 @@ public class ArrayTool {
         System.out.println();
     }
 
+    public static <T> void printArr(T[] arr) {
+        for (T target : arr) {
+            System.out.println(target);
+        }
+        System.out.println();
+    }
+
     /**
      * 校验 arr 是否为从小到大排序的数组
      * @param arr 已排序的数组
