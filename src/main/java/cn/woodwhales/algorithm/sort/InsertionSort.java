@@ -1,6 +1,4 @@
-package cn.woodwhales.algorithm;
-
-import cn.woodwhales.algorithm.util.ArrayTool;
+package cn.woodwhales.algorithm.sort;
 
 import static cn.woodwhales.algorithm.util.ArrayTool.executeAndCheckSorted;
 import static cn.woodwhales.algorithm.util.ArrayTool.swap;
