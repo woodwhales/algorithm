@@ -46,7 +46,7 @@ public class TreeNode {
         root.right.left = new TreeNode(7);
         root.right.right = new TreeNode(8);
 
-        root.left.left = new TreeNode(9);
+        root.left.left.left = new TreeNode(9);
         return root;
     }
 }
